@@ -2,3 +2,15 @@
   width: 100vw;
   height: auto;
 }
+
+.video-train {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0;
+  width: 100vw;
+  height: auto;
+  background: rgba(30, 25, 36, 0.8);
+  border: 5px solid black;
+  border-radius: 10px;
+}
