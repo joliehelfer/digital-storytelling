@@ -1,0 +1,36 @@
+nav {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-link {
+  width: 100%;
+  padding: 30px 60px;
+  display: flex;
+  align-items: center;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: var(--main-font-size);
+  color: #0a3856;
+}
+
+.navbar-link a {
+  border-bottom: 1px solid transparent;
+  transition: all ease-in-out 0.1s;
+}
+
+.navbar-link a:hover {
+  transition: all ease-in-out 0.1s;
+  border-color: #0a3856;
+}
+
+.navbar-link {
+  margin: 0 15px;
+}
+
+.navbar-link .button {
+  position: absolute;
+  right: 60px;
+}

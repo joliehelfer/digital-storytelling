@@ -1,0 +1,18 @@
+.object {
+  border: 5px solid blue;
+  width: 10%;
+  height: 10%;
+  opacity: 20;
+  border-radius: 10px;
+}
+
+.object-wrapper ~ .object-wrapper {
+  justify-content: end;
+}
+
+.object-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 25, 36, 0.8);
+  border: 5px solid black;
+}
