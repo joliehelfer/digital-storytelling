@@ -16,4 +16,30 @@
   color: white;
   background-color: #0a3856;
   transition: all 0.2s ease-out;
+  text-decoration: underline 0.2em;
+  cursor: pointer;
+}
+
+.button-shop {
+  padding: 1.26vh 2.61vw;
+  border-radius: 33px;
+  border: 3px solid #0a3856;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #0a3856;
+  font-family: Oswald;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .button-shop {
+    font-size: 10px;
+    border: 2px solid #0a3856;
+  }
 }
