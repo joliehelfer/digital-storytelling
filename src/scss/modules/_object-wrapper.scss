@@ -1,0 +1,32 @@
+.object-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 5px solid black;
+  border-radius: 1px;
+}
+
+.object {
+  position: absolute;
+  width: 100%;
+  display: flex;
+}
+
+.object-translate-left {
+  left: 10%;
+  justify-content: flex-start;
+}
+
+.object-translate-right {
+  right: 10%;
+  justify-content: flex-end;
+}
+
+.object-static {
+  position: static;
+}
+
+.section-double-animation .object-wrapper {
+  height: 80vh;
+  width: 100%;
+}
