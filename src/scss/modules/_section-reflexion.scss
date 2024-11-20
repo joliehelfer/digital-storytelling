@@ -1,0 +1,45 @@
+.section-reflexion {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-reflexion .parallax-element {
+  width: 10%;
+}
+
+.section-reflexion .object-static {
+  width: 20%;
+}
+
+.section-reflexion .bubble-element:nth-of-type(2) {
+  transform: translate(-200%, 550%);
+}
+
+.section-reflexion .bubble-element:nth-of-type(3) {
+  transform: translate(200%, 1000%);
+}
+
+.section-reflexion .bubble-element:nth-of-type(4) {
+  transform: translate(-150%, 470%);
+}
+
+.section-reflexion .bubble-element:nth-of-type(5) {
+  transform: translate(50%, 600%);
+}
+
+.section-reflexion .bubble-element:nth-of-type(6) {
+  transform: translate(250%, 700%);
+}
+
+.section-reflexion .bubble-element:nth-of-type(7) {
+  transform: translate(-200%, 850%);
+}
+
+.section-reflexion .bubble-element:nth-of-type(8) {
+  transform: translate(150%, 2000%);
+}
