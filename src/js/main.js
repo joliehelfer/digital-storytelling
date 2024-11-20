@@ -1,44 +1,76 @@
-gsap.to(".parallax-element", {
-  scrollTrigger: {
-    trigger: ".parallax-container",
-    pin: true,
-    scrub: 1,
-  },
-  y: -200,
-});
+import { gsap } from "gsap/dist/gsap";
 
-gsap.to("#paysage", {
-  scrollTrigger: {
-    trigger: ".container-paysage",
-    pin: true,
-    scrub: 1,
-  },
-  left: "0",
-});
-
-gsap.to("#perso", {
-  scrollTrigger: {
-    trigger: ".container-cimetiere",
-    pin: true,
-    scrub: 1,
-  },
-  transform: "scale(0.7)",
-});
-
-gsap.to("#lune", {
-  scrollTrigger: {
-    trigger: ".container-lune",
-    start: "top top",
-    pin: true,
-    scrub: 1,
-  },
-  bottom: "0",
-});
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin";
 
 gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
 
-gsap.to("#rect", {
-  duration: 10,
+/* header parallax */
+
+const headerParallax = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".parallax-element-container",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+headerParallax
+  .to(
+    "#foliage-bottom-left",
+    {
+      bottom: "10%",
+      duration: 1,
+    },
+    0
+  )
+  .to(
+    "#butterfly",
+    {
+      top: "-10%",
+      duration: 1,
+    },
+    0
+  )
+  .to(
+    "#foliage-top-right",
+    {
+      top: "10%",
+      duration: 1,
+    },
+    0
+  );
+
+/* main - train seat bckg */
+
+gsap.to("#bckg-train-seat", {
+  scrollTrigger: {
+    trigger: ".section-train-seat",
+    pin: true,
+    start: "top-=10% top",
+    end: "bottom top",
+    scrub: true,
+  },
+  right: "85%",
+});
+
+/* main - hiroshi scale */
+
+gsap.to("#hiroshi-scale", {
+  scrollTrigger: {
+    trigger: ".section-cimtiere",
+    pin: true,
+    start: "top-=10% top",
+    end: "bottom top",
+    scrub: true,
+  },
+  scale: 0.5,
+});
+
+/* main - motion path papillon */
+
+gsap.to("#butterfly-motion-path", {
   motionPath: {
     path: "#path",
     align: "#path",
@@ -46,90 +78,63 @@ gsap.to("#rect", {
     alignOrigin: [0.5, 0.5],
   },
   scrollTrigger: {
-    trigger: "#path", // l'élément qui déclenche l'animation
-    start: "top center", // point de départ de l'animation
-    end: "bottom+=1000px top", // point de fin de l'animation
-    scrub: 2, // synchronise l'animation avec le défilement
-    // markers: true, // pour visualiser les points de déclenchement
+    trigger: ".motion-path",
+    start: "top center",
+    end: "bottom+=1000px bottom",
+    scrub: 2,
+  },
+  ease: "easeInOut",
+});
+
+/* main - memories wrapper */
+
+const memoriesWrapper = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".section-memories",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
   },
 });
 
-gsap.to("#miroir", {
+memoriesWrapper
+  .to("#hiroshi-miroir", { translateX: "100%" })
+  .to("#hiroshi-moto", { translateX: "-100%" }, "-=0.4")
+  .to("#nuage", { translateX: "100%" }, "-=0.4")
+  .to("#hiroshi-baffe", { translateX: "-100%" }, "-=0.4")
+  .to("#plonge-1", { translateY: "-30%" }, "-=0.4")
+  .to("#plonge-2", { translateY: "-40%" }, "-=0.4")
+  .to("#plonge-3", { translateY: "-120%" }, "-=0.4")
+  .to("#hiroshi-with-girl", { translateX: "100%" }, "-=0.4")
+  .to("#hiroshi-walk-in-city", { translateX: "-100%" }, "-=0.4");
+
+// const bubbleParallax = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: '.section-reflexion',
+//         start: "top bottom",
+//         end: "bottom top",
+//         scrub: true,
+//     }
+// });
+
+// bubbleParallax.to ('.bubble-element...')
+
+const bubbles = document.querySelectorAll(".bubble-element");
+
+const tl = gsap.timeline({
   scrollTrigger: {
-    trigger: ".container-miroir",
-    start: "center bottom",
-    scrub: 1,
-    markers: true,
+    trigger: ".section-reflexion",
+    start: "top top",
+    end: "bottom top",
+    scrub: 2,
+    pin: true,
   },
-  x: "60%",
 });
 
-gsap.to("#img-2", {
-  scrollTrigger: {
-    trigger: ".container-img-2",
-    start: "center bottom",
-    scrub: 1,
-    markers: true,
-  },
-  x: "-40%",
-});
-
-gsap.to("#img-3", {
-  scrollTrigger: {
-    trigger: ".container-img-3",
-    start: "center bottom",
-    scrub: 1,
-    markers: true,
-  },
-  x: "-20%",
-});
-
-gsap.to("#img-4", {
-  scrollTrigger: {
-    trigger: ".container-img-4",
-    start: "center bottom",
-    scrub: 1,
-    markers: true,
-  },
-  x: "0",
-});
-
-gsap.to("#img-5", {
-  scrollTrigger: {
-    trigger: ".container-img-5-6-7",
-    start: "center bottom",
-    scrub: 1,
-    markers: true,
-  },
-  top: "0",
-});
-// AK
-gsap.to("#img-6", {
-  scrollTrigger: {
-    trigger: ".container-img-5-6-7",
-    start: "center bottom",
-    scrub: 1,
-    markers: true,
-  },
-  top: "0",
-});
-
-gsap.to("#img-7", {
-  scrollTrigger: {
-    trigger: ".container-img-5-6-7",
-    start: "center bottom",
-    scrub: 1,
-    markers: true,
-  },
-  top: "0",
-});
-
-gsap.to("#img-8", {
-  scrollTrigger: {
-    trigger: ".container-img-8",
-    start: "center bottom",
-    scrub: 1,
-    markers: true,
-  },
-  top: "0%",
+bubbles.forEach((bubble, index) => {
+  tl.to(bubble, {
+    y: `-${20 + index * 50}%`, // Décalage progressif
+    opacity: 1,
+    duration: 1,
+  });
 });
